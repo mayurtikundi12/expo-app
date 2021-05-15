@@ -3,6 +3,7 @@ import { StyleSheet, View, TextInput } from 'react-native';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import AppTextInput from '../components/AppTextInput';
 import AppColours from '../config/AppColours';
@@ -16,7 +17,19 @@ const schema = Yup.object().shape(
     }
 );
 
-function LoginScreen(props) {
+async function login(email, password, navigation) {
+    let rawUserInfo = await AsyncStorage.getItem("userInfo")
+    let userInfo = JSON.parse(rawUserInfo)
+    if (userInfo.email == email && userInfo.password == password) {
+        navigation.navigate("Account")
+    }
+    console.log("This is userInfo: ", typeof userInfo)
+
+    console.log("This is userInfo: ", userInfo)
+
+}
+
+function LoginScreen({navigation}) {
 
     return (
         <View style={styles.container}>
@@ -28,7 +41,11 @@ function LoginScreen(props) {
             </View>
             <Formik
                 initialValues={{email:'', password:'',}}
-                onSubmit = {values => console.log(values)}
+
+                onSubmit = {values => {console.log(values)
+                login(values.email, values["password"], navigation)
+                }}
+
                 validationSchema={schema}
                 >
             {({handleChange, handleSubmit, errors, setFieldTouched, touched}) => (

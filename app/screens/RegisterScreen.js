@@ -2,12 +2,26 @@ import React, {useState} from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {Formik} from 'formik';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import AppButton from '../components/AppButton';
 import AppColours from '../config/AppColours';
 import AppTextInput from '../components/AppTextInput';
+import AccountScreen from './AccountScreen';
 
-function RegisterScreen(props) {
+
+async function register(userName, email, password, navigation) {
+    let userInfo = {
+        userName: userName,
+        email: email,
+        password: password
+    }
+    await AsyncStorage.setItem("userInfo", JSON.stringify(userInfo))
+    navigation.navigate("Login")
+}
+
+
+function RegisterScreen({navigation}) {
     const [userName, setUserName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -48,7 +62,7 @@ function RegisterScreen(props) {
                         onChangeText = {userInputPassword => setPassword(userInputPassword)}
                         />
                 </View> 
-                <AppButton title="Register" onPress={() => console.log(userName, email,password )}/>
+                <AppButton title="Register" onPress={() => {register(userName , email, password, navigation)}}/>
         </View>
     );
 }

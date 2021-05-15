@@ -15,8 +15,10 @@ function AccountScreen(props) {
                     color={AppColours.darkG}/>
             </View>
             <View style={styles.profileContainer}>
+             
+
                 <AppListItem 
-                image={require("../../assets/doge.jpg")} 
+                
                 title="BillieEilish" 
                 subtitle="be@gmail.com"/>
 
