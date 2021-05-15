@@ -17,7 +17,7 @@ function AccountScreen(props) {
             </View>
             <View style={styles.profileContainer}>
                 <AppListItem 
-                image={require("../assets/doge.jpg")} 
+                image={require("../../assets/doge.jpg")} 
                 title="BillieEilish" 
                 subtitle="be@gmail.com"/>
 

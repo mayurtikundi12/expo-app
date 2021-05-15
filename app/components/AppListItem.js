@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Image, Text  } from 'react-native';
 
-function AppListItem(image, title, subtitle) {
+function AppListItem({image, title, subtitle}) {
     return (
         <View>
             <Image source={image} style={StyleSheet.image}/>
@@ -10,8 +10,7 @@ function AppListItem(image, title, subtitle) {
             </Text>
             <Text>
                 {subtitle}
-            </Text>
-            
+            </Text>            
         </View>
     );
 }
