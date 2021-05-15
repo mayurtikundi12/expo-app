@@ -12,7 +12,7 @@ import AppScreen from '../components/AppScreen';
 
 function WelcomeScreen(navigation) {
     return (
-        <AppScreen>
+        <View>
             {/* <ImageBackground
                 source={require("./travelBG.jpg")}
                 style={styles.backgroung} 
@@ -29,7 +29,7 @@ function WelcomeScreen(navigation) {
                         <AppButton title="Sign Up" onPress={ () => navigation.navigate("Register")}/>                        
                     </View>
             {/* </ImageBackground> */}
-        </AppScreen>
+            </View>
     );
 }
 
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         paddingTop: 100,
     },
     buttonContainer:{    
-        backgroundColour: AppColours.darkG,
+        backgroundColor: AppColours.darkG,
         marginTop: 100,
         flexDirection: 'column',
         justifyContent: 'space-between',
