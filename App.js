@@ -7,13 +7,14 @@ import WelcomeScreen from './app/screens/WelcomeScreen';
 import LoginScreen from './app/screens/LoginScreen';
 import RegisterScreen from './app/screens/RegisterScreen';
 import AppSwitch from './app/components/AppSwitch';
+import AccountScreen from './app/screens/AccountScreen';
 
 
 export default function App() {
   return ( 
-    <AppSwitch>
+    <AccountScreen>
         {/* <AuthNavigator/> */}
-    </AppSwitch>
+    </AccountScreen>
   );
 }
 
