@@ -6,15 +6,17 @@ import TravelScreen from './app/screens/TravelScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import LoginScreen from './app/screens/LoginScreen';
 import RegisterScreen from './app/screens/RegisterScreen';
+import AppSwitch from './app/components/AppSwitch';
 
 
 export default function App() {
   return ( 
-    <LoginScreen>
+    <AppSwitch>
         {/* <AuthNavigator/> */}
-    </LoginScreen>
+    </AppSwitch>
   );
 }
+
 const styles = StyleSheet.create({
   
 })
