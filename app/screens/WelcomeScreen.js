@@ -9,7 +9,7 @@ import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
 import AppColours from '../config/AppColours';
 
-function WelcomeScreen(navigation) {
+function WelcomeScreen({navigation}) {
     return (
         <SafeAreaView>
             {/* <ImageBackground
