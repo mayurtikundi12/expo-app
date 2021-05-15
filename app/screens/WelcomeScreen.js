@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Image, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Image, View } from 'react-native';
 // const blurRadiusValue = Platform.OS === 'android'? 0.7 : 5.5;
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 import {useNavigation} from '@react-navigation/native';
@@ -8,11 +8,10 @@ import {useNavigation} from '@react-navigation/native';
 import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
 import AppColours from '../config/AppColours';
-import AppScreen from '../components/AppScreen';
 
 function WelcomeScreen(navigation) {
     return (
-        <View>
+        <SafeAreaView>
             {/* <ImageBackground
                 source={require("./travelBG.jpg")}
                 style={styles.backgroung} 
@@ -29,7 +28,7 @@ function WelcomeScreen(navigation) {
                         <AppButton title="Sign Up" onPress={ () => navigation.navigate("Register")}/>                        
                     </View>
             {/* </ImageBackground> */}
-            </View>
+            </SafeAreaView>
     );
 }
 

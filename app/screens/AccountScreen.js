@@ -2,13 +2,12 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 
-import AppScreen from '../components/AppScreen';
 import AppColours from '../config/AppColours';
 import AppListItem from '../components/AppListItem';
 
 function AccountScreen(props) {
     return (
-        <AppScreen style={styles.container}>
+        <View style={styles.container}>
             <View style={styles.welcomeContainer}>
                 <MaterialCommunityIcons
                     name="airplane-takeoff"
@@ -23,7 +22,7 @@ function AccountScreen(props) {
 
             </View>
             
-        </AppScreen>
+        </View>
     );
 }
 

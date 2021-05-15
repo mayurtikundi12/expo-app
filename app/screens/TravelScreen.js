@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import AppSelect from '../components/AppSelect';
-import AppScreen from '../components/AppScreen';
 import AppColours from '../config/AppColours';
 const categories = [
     {label: "Bali", value:1, backgroundColor:"red"},
@@ -14,7 +13,7 @@ function TravelScreen(props) {
     const[places, setPlaces] = useState();
 
     return (
-        <AppScreen style={{backgroundColor:AppColours.white}}>
+        <View style={{backgroundColor:AppColours.white}}>
             <AppSelect
                 selectedItem={category}
                 onSelectItem = {item => setPlaces(item)}
@@ -22,7 +21,7 @@ function TravelScreen(props) {
                 icon="apps" 
                 placeholder="Locations" 
                 numColumns={3}/>
-        </AppScreen>
+        </View>
     );
 }
 

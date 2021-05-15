@@ -6,7 +6,6 @@ import * as Yup from 'yup';
 
 import AppTextInput from '../components/AppTextInput';
 import AppColours from '../config/AppColours';
-import AppScreen from '../components/AppScreen';
 import AppButton from '../components/AppButton';
 import AppText from '../components/AppText';
 
@@ -20,7 +19,7 @@ const schema = Yup.object().shape(
 function LoginScreen(props) {
 
     return (
-        <AppScreen style={styles.container}>
+        <View style={styles.container}>
             <View style={styles.welcomeContainer}>
                     <MaterialCommunityIcons
                     name="airplane-takeoff"
@@ -68,7 +67,7 @@ function LoginScreen(props) {
             </>
             )}
             </Formik>
-        </AppScreen>
+        </View>
     );
 }
 

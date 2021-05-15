@@ -4,7 +4,6 @@ import {MaterialCommunityIcons} from '@expo/vector-icons';
 
 import AppColours from '../config/AppColours';
 import AppSelectItem from './AppSelectItem';
-import AppScreen from './AppScreen';
 import AppText from './AppText';
 
 
@@ -21,7 +20,7 @@ function AppSelect({data, icon, placeholder, numColumns, selectedItem, onSelectI
                 </View>
             </TouchableWithoutFeedback>
             <Modal visible={modalVisible} animationType="slide">
-                <AppScreen>
+                <View>
                     <Button title="Close" onPress={() => setModalVisible(false)}/>
                     <FlatList
                         numColumns={numColumns}
@@ -39,7 +38,7 @@ function AppSelect({data, icon, placeholder, numColumns, selectedItem, onSelectI
                             backgroundColor={item.backgroundColor}
                             />}
                     />
-                </AppScreen> 
+                </View> 
             </Modal>
         </>
     );

@@ -5,7 +5,6 @@ import {Formik} from 'formik';
 
 import AppButton from '../components/AppButton';
 import AppColours from '../config/AppColours';
-import AppScreen from '../components/AppScreen';
 import AppTextInput from '../components/AppTextInput';
 
 function RegisterScreen(props) {
@@ -14,7 +13,7 @@ function RegisterScreen(props) {
     const [password, setPassword] = useState();
 
     return (
-        <AppScreen style={styles.container}>
+        <View style={styles.container}>
                 <View style={styles.welcomeContainer}>
                     <MaterialCommunityIcons
                         name="airplane-takeoff" 
@@ -50,7 +49,7 @@ function RegisterScreen(props) {
                         />
                 </View> 
                 <AppButton title="Register" onPress={() => console.log(userName, email,password )}/>
-        </AppScreen>
+        </View>
     );
 }
 

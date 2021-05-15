@@ -1,15 +1,14 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import AppScreen from '../components/AppScreen';
 import AppColours from '../config/AppColours';
 
 
 function CardScreen(props) {
     return (
-        <AppScreen style={styles.container}>
+        <View style={styles.container}>
             
-        </AppScreen>
+        </View>
     );
 }
 const styles = StyleSheet.create({
