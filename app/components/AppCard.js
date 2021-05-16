@@ -2,9 +2,9 @@ import { View, Image, StyleSheet } from 'react-native';
 
 import React from 'react';
 import AppColours from '../config/AppColours';
-import AppTextInput from './AppTextInput';
+import AppText from './AppText';
 
-function AppCard(props) {
+function AppCard({title, subtitle, image}) {
     return (
         <View style={styles.container}>
             <Image source={image} style={styles.image}/>

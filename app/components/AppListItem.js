@@ -4,13 +4,7 @@ import { View, StyleSheet, Image, Text  } from 'react-native';
 function AppListItem({image, title, subtitle}) {
     return (
         <View>
-            <Image source={require("../../assets/doge.jpg")} style={{
-        height: 75,
-        width:75,
-        borderRadius: 17,
-        zIndex: 10,
-
-    }}/>
+            <Image source={image} style={StyleSheet.image}/>
             <Text>
                 {title}
             </Text>
@@ -22,10 +16,8 @@ function AppListItem({image, title, subtitle}) {
 }
 const styles = StyleSheet.create({
     image:{
-        height: 75,
+        height:75,
         width:75,
-        borderRadius: 17,
-
     }
 })
 
