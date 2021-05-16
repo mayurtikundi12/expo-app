@@ -10,7 +10,7 @@ import User from "../context/userContext";
 
 
 function AccountScreen(props) {
-  const[user, setUser] = useContext(User);
+  const {userInfo} = useContext(User);
 
 
   return (
@@ -33,7 +33,7 @@ function AccountScreen(props) {
               zIndex: 10,
             }}
           />
-          <AppListItem title={user.userName} subtitle={user.email} />
+          <AppListItem title={userInfo.userName} subtitle={userInfo.email} />
         </View>
       </View>
       <View style={styles.placesContainer}>
