@@ -15,7 +15,7 @@ export default function App() {
   const AppStack = createStackNavigator();
   return (   
 
-    <AccountScreen/>
+    <TravelScreen/>
 
     // <NavigationContainer>
     // <AppStack.Navigator initialRouteName="Welcome">

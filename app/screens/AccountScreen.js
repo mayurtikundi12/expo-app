@@ -40,6 +40,11 @@ function AccountScreen(props) {
                 subtitle="Visited on 4th June 2019"
                 image={require("../../assets/bora-bora.jpg")}
             />
+            <AppCard style={styles.card}
+                title="Switzerland"
+                subtitle="Visted on 8th March 2018"
+                image={require("../../assets/switz.jpg")}
+            />
       </View>
     </View>
   );
