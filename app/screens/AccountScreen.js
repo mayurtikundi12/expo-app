@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { View, StyleSheet, Image } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -6,9 +6,13 @@ import AppCard from "../components/AppCard";
 import AppColours from "../config/AppColours";
 import AppListItem from "../components/AppListItem";
 import AppText from "../components/AppText";
+import User from "../context/userContext";
 
 
 function AccountScreen(props) {
+  const[user, setUser] = useContext(User);
+
+
   return (
     <View style={styles.container}>
       <View style={styles.wrap}>
@@ -29,7 +33,7 @@ function AccountScreen(props) {
               zIndex: 10,
             }}
           />
-          <AppListItem title="BillieEilish" subtitle="be@gmail.com" />
+          <AppListItem title={user.userName} subtitle={user.email} />
         </View>
       </View>
       <View style={styles.placesContainer}>

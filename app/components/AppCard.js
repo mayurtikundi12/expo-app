@@ -8,7 +8,7 @@ import AppText from './AppText';
 
 function AppCard({title, subtitle, image}) {
     return (
-        <Swipeable renderRightActions={onSwipeLeft}>
+        // <Swipeable renderRightActions={onSwipeLeft}>
         
         <View style={styles.container}>
             <Image source={image} style={styles.image}/>
@@ -16,7 +16,7 @@ function AppCard({title, subtitle, image}) {
             <AppText style={styles.subtitle}> {subtitle} </AppText>
 
         </View>
-        </Swipeable>
+        // </Swipeable>
     );
 }
 const styles = StyleSheet.create({

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {Formik} from 'formik';
@@ -9,6 +9,8 @@ import AppTextInput from '../components/AppTextInput';
 import AppColours from '../config/AppColours';
 import AppButton from '../components/AppButton';
 import AppText from '../components/AppText';
+import User from '../context/userContext';
+
 
 const schema = Yup.object().shape(
     {
@@ -17,21 +19,24 @@ const schema = Yup.object().shape(
     }
 );
 
-async function login(email, password, navigation) {
+
+
+function LoginScreen({navigation}) {
+    const [user, setUser] = useContext(User);
+
+   async function login(email, password, navigation) {
     let rawUserInfo = await AsyncStorage.getItem("userInfo")
     let userInfo = JSON.parse(rawUserInfo)
     if (userInfo.email == email && userInfo.password == password) {
-        navigation.navigate("Account")
+        setUser({userName:userInfo.userName, email:userInfo.email})
+        navigation.navigate("Home")
     }
     console.log("This is userInfo: ", typeof userInfo)
 
     console.log("This is userInfo: ", userInfo)
 
-}
-
-function LoginScreen({navigation}) {
-
-    return (
+} 
+return (
         <View style={styles.container}>
             <View style={styles.welcomeContainer}>
                     <MaterialCommunityIcons
