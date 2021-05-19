@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1621393924310" clover="3.2.0">
+  <project timestamp="1621393924310" name="All files">
+    <metrics statements="90" coveredstatements="31" conditionals="24" coveredconditionals="2" methods="44" coveredmethods="4" elements="158" coveredelements="37" complexity="0" loc="90" ncloc="90" packages="6" files="22" classes="22"/>
+    <package name="javascriptProject">
+      <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="App.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\App.js">
+        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="javascriptProject.app.components">
+      <metrics statements="35" coveredstatements="12" conditionals="16" coveredconditionals="2" methods="22" coveredmethods="2"/>
+      <file name="AppButton.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\components\AppButton.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+      <file name="AppCard.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\components\AppCard.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+      <file name="AppIcon.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\components\AppIcon.js">
+        <metrics statements="2" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+      <file name="AppListItem.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\components\AppListItem.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="AppPicker.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\components\AppPicker.js">
+        <metrics statements="8" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+      </file>
+      <file name="AppPickerItem.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\components\AppPickerItem.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="AppSelect.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\components\AppSelect.js">
+        <metrics statements="8" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+      </file>
+      <file name="AppSelectItem.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\components\AppSelectItem.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="AppSwitch.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\components\AppSwitch.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="AppText.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\components\AppText.js">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+      <file name="AppTextInput.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\components\AppTextInput.js">
+        <metrics statements="2" coveredstatements="1" conditionals="4" coveredconditionals="1" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="javascriptProject.app.config">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="AppColours.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\config\AppColours.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="javascriptProject.app.context">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="userContext.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\context\userContext.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="javascriptProject.app.navigation">
+      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="AuthNavigator.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\navigation\AuthNavigator.js">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="javascriptProject.app.screens">
+      <metrics statements="43" coveredstatements="10" conditionals="8" coveredconditionals="0" methods="19" coveredmethods="1"/>
+      <file name="AccountScreen.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\screens\AccountScreen.js">
+        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+      </file>
+      <file name="HomeScreen.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\screens\HomeScreen.js">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+      </file>
+      <file name="LoginScreen.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\screens\LoginScreen.js">
+        <metrics statements="16" coveredstatements="2" conditionals="8" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+      </file>
+      <file name="RegisterScreen.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\screens\RegisterScreen.js">
+        <metrics statements="12" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+      </file>
+      <file name="ResortScreen.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\screens\ResortScreen.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+      </file>
+      <file name="TravelScreen.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\screens\TravelScreen.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+      </file>
+      <file name="WelcomeScreen.js" path="C:\Users\User\Desktop\study\comp3130\javascriptProject\app\screens\WelcomeScreen.js">
+        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

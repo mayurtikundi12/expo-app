@@ -28,14 +28,16 @@ function RegisterScreen({navigation}) {
 
     return (
         <View style={styles.container}>
-                <View style={styles.welcomeContainer}>
-                    <MaterialCommunityIcons
+
+                <View testID ='TID3'style={styles.welcomeContainer}>
+
+                    {/* <MaterialCommunityIcons
                         name="airplane-takeoff" 
                         size={60}
-                        color={AppColours.darkG}/>
+                        color={AppColours.darkG}/> */}
                 </View>
                 <View style={styles.textInputContainer}>  
-                    <AppTextInput
+                    <TextInput testID ='TID4'
                         autoCapitalize="none"
                         autoCorrect={false}
                         icon="account"
@@ -43,7 +45,7 @@ function RegisterScreen({navigation}) {
                         textContentType="emailAddress"
                         onChangeText = { userInputName => setUserName(userInputName)}
                         />           
-                    <AppTextInput
+                    <TextInput testID ='TID5'
                         autoCapitalize="none"
                         autoCorrect={false}
                         icon="email"
@@ -52,7 +54,7 @@ function RegisterScreen({navigation}) {
                         textContentType="emailAddress"
                         onChangeText = { userInputEmail => setEmail(userInputEmail)}
                         />
-                    <AppTextInput
+                    <TextInput testID ='TID6'
                         autoCapitalize="none"
                         autoCorrect={false}
                         icon="lock"

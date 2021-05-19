@@ -11,7 +11,7 @@ function ResortScreen(props) {
     return (
         <View style={styles.container}>
             <AppText style={styles.apptext}>
-                Select your travel destination!
+            Select your stay!
             </AppText>
             <AppCard style={styles.card}
                 title="Bora Bora"

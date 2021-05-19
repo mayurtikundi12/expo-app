@@ -7,11 +7,17 @@ import AppColours from "../config/AppColours";
 import AppListItem from "../components/AppListItem";
 import AppText from "../components/AppText";
 import User from "../context/userContext";
+import AppPicker from "../components/AppPicker";
 
 
 function AccountScreen(props) {
-  const[user, setUser] = useContext(User);
-
+  const {userInfo} = useContext(User);
+  const categories =[
+    {label: "Tourist spots", value: 1, icon:"flash", backgroundColor: 'red'},
+    {label: "Resorts", value: 2, icon:"flash", backgroundColor: 'red'},
+    {label: "Shop", value: 3, icon:"flash", backgroundColor: 'red'},
+    {label: "Things to do", value: 4, icon:"flash", backgroundColor: 'red'},
+  ];
 
   return (
     <View style={styles.container}>
@@ -33,10 +39,13 @@ function AccountScreen(props) {
               zIndex: 10,
             }}
           />
-          <AppListItem title={user.userName} subtitle={user.email} />
+          <AppListItem title={userInfo.userName} subtitle={userInfo.email} />
         </View>
       </View>
-      <View style={styles.placesContainer}>
+      <View>
+        <AppPicker data={categories} icon="apps" placeholder="Categories"/>
+      </View>
+      {/* <View style={styles.placesContainer}>
         <AppText style={styles.apptext}>Places you've visited in the past</AppText>
         
             <AppCard style={styles.card}
@@ -49,7 +58,7 @@ function AccountScreen(props) {
                 subtitle="Visted on 8th March 2018"
                 image={require("../../assets/switz.jpg")}
             />
-      </View>
+      </View> */}
     </View>
   );
 }

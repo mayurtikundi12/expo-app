@@ -22,13 +22,12 @@ const schema = Yup.object().shape(
 
 
 function LoginScreen({navigation}) {
-    const [user, setUser] = useContext(User);
-
-   async function login(email, password, navigation) {
+    const {dispatch} = useContext(User);
+    async function login(email, password, navigation) {
     let rawUserInfo = await AsyncStorage.getItem("userInfo")
     let userInfo = JSON.parse(rawUserInfo)
     if (userInfo.email == email && userInfo.password == password) {
-        setUser({userName:userInfo.userName, email:userInfo.email})
+        dispatch({userName:userInfo.userName, email:userInfo.email})
         navigation.navigate("Home")
     }
     console.log("This is userInfo: ", typeof userInfo)

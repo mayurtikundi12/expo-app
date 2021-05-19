@@ -5,7 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.4",
@@ -24,10 +25,36 @@
     "react-native-safe-area-context": "3.1.9",
     "react-native-screens": "~2.15.2",
     "react-native-web": "~0.13.12",
+    "react-test-renderer": "^16.14.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0"
+    "@babel/core": "^7.9.0",
+    "@testing-library/jest-native": "^4.0.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/react-native": "^7.2.0",
+    "@types/jest": "^26.0.23",
+    "jest": "^26.6.3",
+    "jest-expo": "^41.0.0",
+    "metro-react-native-babel-preset": "^0.64.0"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "setupFiles": [
+      "./node_modules/react-native-gesture-handler/jestSetup.js",
+      "<rootDir>/jest.setup.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
+    ],
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/babel.config.js",
+      "!**/jest.setup.js"
+    ]
   },
   "private": true
 }
