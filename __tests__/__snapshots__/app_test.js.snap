@@ -193,6 +193,7 @@ exports[`appScreenTest App Screen Test 1`] = `
                           }
                         }
                       >
+                        <Text />
                         <Text
                           style={
                             Array [

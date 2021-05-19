@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, StyleSheet, TextInput } from 'react-native';
+import { View, StyleSheet, TextInput, Button } from 'react-native';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {Formik} from 'formik';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -31,10 +31,10 @@ function RegisterScreen({navigation}) {
 
                 <View testID ='TID3'style={styles.welcomeContainer}>
 
-                    {/* <MaterialCommunityIcons
+                    <MaterialCommunityIcons
                         name="airplane-takeoff" 
                         size={60}
-                        color={AppColours.darkG}/> */}
+                        color={AppColours.darkG}/>
                 </View>
                 <View style={styles.textInputContainer}>  
                     <TextInput testID ='TID4'
@@ -64,7 +64,7 @@ function RegisterScreen({navigation}) {
                         onChangeText = {userInputPassword => setPassword(userInputPassword)}
                         />
                 </View> 
-                <AppButton title="Register" onPress={() => {register(userName , email, password, navigation)}}/>
+                <Button testID= 'TID7' title="Register" onPress={() => {register(userName , email, password, navigation)}}/>
         </View>
     );
 }

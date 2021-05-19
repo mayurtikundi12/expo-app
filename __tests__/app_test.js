@@ -2,7 +2,7 @@ import React from 'react';
 import App from '../App.js';
 import 'react-native';
 import renderer from 'react-test-renderer';
-import { render, fireEvent } from '@testing-library/react-native';
+import { render, fireEvent, act } from '@testing-library/react-native';
 import AppText from '../app/components/AppText';
 
 
@@ -44,16 +44,29 @@ describe('appScreenTest',() => {
     })
 
     it('Register page navigation', async() => {
-        const {getByTestId, getByText} = render(<App/>);
+        const {getByTestId, getByText, debug} = render(<App/>);
         let output2 = await getByTestId('TID2');
         fireEvent(output2, 'press')
         let name = await getByTestId('TID4');
         let email = await getByTestId('TID5');
         let password = await getByTestId('TID6');
-        fireEvent.changeText(name, qwe)
+        let button = await getByTestId('TID7');
+
+        fireEvent.changeText(name, 'qwe')
         fireEvent.changeText(email, 'qwe@g.com')
-        fireEvent.changeText(password, qwer)
-        expect(newScreen).toBeTruthy()
+        fireEvent.changeText(password, 'qwer')
+        act(() => {
+            fireEvent(button, 'press') 
+            debug()           
+        })
+        let loginID = await getByTestId('TID8')
+
+            expect(loginID).toBeTruthy()
+            expect(name).toBeTruthy()
+            expect(email).toBeTruthy()
+            expect(password).toBeTruthy()
+            expect(button).toBeTruthy()
+
     })
 })
 

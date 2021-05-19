@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, Image, View, Button} from 'react-native';
 // const blurRadiusValue = Platform.OS === 'android'? 0.7 : 5.5;
-// import {MaterialCommunityIcons} from '@expo/vector-icons'
+import {MaterialCommunityIcons} from '@expo/vector-icons'
 import {useNavigation} from '@react-navigation/native';
 
 
@@ -17,10 +17,10 @@ function WelcomeScreen({navigation}) {
                 style={styles.backgroung} 
                 blurRadius={blurRadiusValue}> */}
                     <View style={styles.welcomeScreen}>
-                        {/* <MaterialCommunityIcons
+                        <MaterialCommunityIcons
                             name="airplane-takeoff"
                             size={50}
-                            color= {AppColours.black}/> */}
+                            color= {AppColours.black}/>
                         <AppText> Welcome to TravApp </AppText>
                     </View>
                     <View style={styles.buttonContainer}>

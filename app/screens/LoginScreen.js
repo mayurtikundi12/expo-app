@@ -36,7 +36,7 @@ function LoginScreen({navigation}) {
 
 } 
 return (
-        <View style={styles.container}>
+        <View testID = 'TID8' style={styles.container}>
             <View style={styles.welcomeContainer}>
                     <MaterialCommunityIcons
                     name="airplane-takeoff"

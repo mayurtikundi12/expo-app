@@ -28,11 +28,8 @@ export default function App() {
 
 
   return (   
-<<<<<<< HEAD
     // <HomeScreen/>
-=======
 
->>>>>>> d514a291f5857754bc759568ee34fa8d0892d389
     <User.Provider value={{userInfo,dispatch}} >
       <NavigationContainer>
           <AppStack.Navigator initialRouteName="Welcome">
@@ -48,10 +45,7 @@ export default function App() {
 
     
   );
-<<<<<<< HEAD
-}
-=======
 }
 
 
->>>>>>> d514a291f5857754bc759568ee34fa8d0892d389
+
