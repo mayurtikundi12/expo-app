@@ -2,49 +2,66 @@ import React from 'react';
 import App from '../App.js';
 import 'react-native';
 import renderer from 'react-test-renderer';
-import { render, fireEvent, act } from '@testing-library/react-native';
+import {
+    render,
+    fireEvent,
+    act
+} from '@testing-library/react-native';
 import AppText from '../app/components/AppText';
 
 
-describe('appScreenTest',() => {
+describe('appScreenTest', () => {
     let tree, treeInstance;
-    beforeAll(() => {tree = renderer.create(<App/>)
-    treeInstance = tree.root
+    beforeAll(() => {
+        tree = renderer.create( < App /> )
+        treeInstance = tree.root
     })
 
-    it('App Screen Test',async() => {
+    it('App Screen Test', async () => {
         expect(tree.toJSON()).toMatchSnapshot()
     })
 
-    it('Login Button Test', async() => {
-        let text = treeInstance.findByProps({testID:'TID1'})
+    it('Login Button Test', async () => {
+        let text = treeInstance.findByProps({
+            testID: 'TID1'
+        })
         expect(text).toBeTruthy()
     })
 
-    it('Welcome Text Test', async() => {
+    it('Welcome Text Test', async () => {
         let text = treeInstance.findByType(AppText)
         expect(text).toBeTruthy()
     })
 
-    it('Testing with testing library', async() => {
-        const {getByTestId, getByText} = render(<App/>);
-        
+    it('Testing with testing library', async () => {
+        const {
+            getByTestId,
+            getByText
+        } = render( < App /> );
+
         let output1 = await getByText('Login');
         let output2 = await getByTestId('TID2');
         expect(output1).toBeTruthy()
         expect(output2).toBeTruthy()
     })
 
-    it('Navigation testing', async() => {
-        const {getByTestId, getByText} = render(<App/>);
+    it('Navigation testing', async () => {
+        const {
+            getByTestId,
+            getByText
+        } = render( < App / > );
         let output2 = await getByTestId('TID2');
         fireEvent(output2, 'press')
         let newScreen = await getByTestId('TID3');
         expect(newScreen).toBeTruthy()
     })
 
-    it('Register page navigation', async() => {
-        const {getByTestId, getByText, debug} = render(<App/>);
+    it('Register page navigation', async () => {
+        const {
+            getByTestId,
+            getByText,
+            debug
+        } = render( < App /> );
         let output2 = await getByTestId('TID2');
         fireEvent(output2, 'press')
         let name = await getByTestId('TID4');
@@ -55,19 +72,23 @@ describe('appScreenTest',() => {
         fireEvent.changeText(name, 'qwe')
         fireEvent.changeText(email, 'qwe@g.com')
         fireEvent.changeText(password, 'qwer')
-        act(() => {
-            fireEvent(button, 'press') 
-            debug()           
+        await act(async () => {
+            await fireEvent(button, 'press');
         })
+
+        // function sleep(period) {
+        //     return new Promise(resolve => setTimeout(resolve, period));
+        // }
+        // await act(async () => {
+        //     await sleep(3100);
+        // })
+        // debug("Debugging after change");
+        expect(name).toBeTruthy();
+        expect(email).toBeTruthy();
+        expect(password).toBeTruthy();
+        expect(button).toBeTruthy();
         let loginID = await getByTestId('TID8')
+        expect(loginID).toBeTruthy();
 
-            expect(loginID).toBeTruthy()
-            expect(name).toBeTruthy()
-            expect(email).toBeTruthy()
-            expect(password).toBeTruthy()
-            expect(button).toBeTruthy()
-
-    })
+    }, 10000)
 })
-
-
