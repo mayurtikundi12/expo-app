@@ -1,8 +1,7 @@
 
 import React from 'react';
 
-var initialUser = {userName:"", email:""}
-var User = React.createContext(initialUser);
+var User = React.createContext();
 
 export default User;
 

@@ -12,12 +12,16 @@ import AppPicker from "../components/AppPicker";
 
 function AccountScreen(props) {
   const {userInfo} = useContext(User);
+<<<<<<< HEAD
   const categories =[
     {label: "Tourist spots", value: 1, icon:"flash", backgroundColor: 'red'},
     {label: "Resorts", value: 2, icon:"flash", backgroundColor: 'red'},
     {label: "Shop", value: 3, icon:"flash", backgroundColor: 'red'},
     {label: "Things to do", value: 4, icon:"flash", backgroundColor: 'red'},
   ];
+=======
+
+>>>>>>> d514a291f5857754bc759568ee34fa8d0892d389
 
   return (
     <View style={styles.container}>
