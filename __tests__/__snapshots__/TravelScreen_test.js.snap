@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`accountScreen test Account Screen Test 1`] = `
+exports[`Travel Screen test Account Screen Test 1`] = `
 <RCTScrollView
   pagingEnabled={true}
 >

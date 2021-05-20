@@ -3,10 +3,11 @@ import 'react-native';
 import renderer from 'react-test-renderer';
 import TravelScreen from '../app/screens/TravelScreen.js';
 import {act} from '@testing-library/react-native';
+import AppCard from '../app/components/AppCard.js';
 describe('Travel Screen test', () => {
     let tree, treeInstance;
-    beforeAll(() => {
-        tree = renderer.create( 
+    beforeAll(async () => {
+       tree = await renderer.create( 
             <TravelScreen/> 
         )
         treeInstance = tree.root
@@ -19,14 +20,13 @@ describe('Travel Screen test', () => {
     it('Update Cards List', async() => {
         let showMoreButton = treeInstance.findByProps({testID: 'showMore'});
         expect(showMoreButton).toBeTruthy();
-        let cards = treeInstance.findAllByProps({testID: 'placeCard'});
-        console.log("Original length",cards.length)
+        let cards = treeInstance.findAllByType(AppCard);
         expect(cards).toBeTruthy()
         let originalLength = cards.length;
         await act(async()=>{
             await showMoreButton.props.onPress();
         })
-        let updatedCards = treeInstance.findAllByProps({testID:'placeCard'})
+        let updatedCards = treeInstance.findAllByType(AppCard);
         expect(updatedCards.length).toEqual(originalLength+1);
     })
 

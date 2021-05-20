@@ -8,7 +8,7 @@ import AppListItem from "../components/AppListItem";
 import AppText from "../components/AppText";
 import User from "../context/userContext";
 import AppPicker from "../components/AppPicker";
-import AppIcon from "../components/AppIcon";
+
 // import {Picker} from '@react-native-picker/picker';
 // import Swipeable from 'react-native-gesture-handler';
 
