@@ -49,7 +49,7 @@ describe('appScreenTest', () => {
         const {
             getByTestId,
             getByText
-        } = render( < App / > );
+        } = render( < App /> );
         let output2 = await getByTestId('TID2');
         fireEvent(output2, 'press')
         let newScreen = await getByTestId('TID3');
@@ -91,4 +91,8 @@ describe('appScreenTest', () => {
         expect(loginID).toBeTruthy();
 
     }, 10000)
+
+    afterAll(() => {
+        tree.unmount()
+    })
 })

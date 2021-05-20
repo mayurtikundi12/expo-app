@@ -1,5 +1,5 @@
-import React, {useContext} from "react";
-import { View, StyleSheet, Image } from "react-native";
+import React, {useContext, useState} from "react";
+import { View, StyleSheet, Image, Button } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppCard from "../components/AppCard";
@@ -8,16 +8,34 @@ import AppListItem from "../components/AppListItem";
 import AppText from "../components/AppText";
 import User from "../context/userContext";
 import AppPicker from "../components/AppPicker";
-
+import AppIcon from "../components/AppIcon";
+// import Swipeable from 'react-native-gesture-handler';
 
 function AccountScreen(props) {
   const {userInfo} = useContext(User);
-  const categories =[
+
+  const schema =[
     {label: "Tourist spots", value: 1, icon:"flash", backgroundColor: 'red'},
     {label: "Resorts", value: 2, icon:"flash", backgroundColor: 'red'},
     {label: "Shop", value: 3, icon:"flash", backgroundColor: 'red'},
     {label: "Things to do", value: 4, icon:"flash", backgroundColor: 'red'},
   ];
+
+  const placesList =[
+    {title: "Bora Bora", 
+    subtitle: "Visited on 4th June 2019", 
+    image:  require("../../assets/bora-bora.jpg")},
+    {title: "Switzerland",
+    subtitle: "Visted on 8th March 2018",
+    image: require("../../assets/switz.jpg")},
+  ];
+  const [places, setPlaces] = useState(placesList);
+
+  function deletePrev(title){
+    let newPlaces = places.filter((item)=>item.title==title ? false : item)
+    setPlaces(newPlaces)
+  }
+
 
   return (
     <View style={styles.container}>
@@ -43,22 +61,29 @@ function AccountScreen(props) {
         </View>
       </View>
       <View>
-        <AppPicker data={categories} icon="apps" placeholder="Categories"/>
+        <AppPicker data={schema} icon="apps" placeholder="Categories"/>
       </View>
-      {/* <View style={styles.placesContainer}>
-        <AppText style={styles.apptext}>Places you've visited in the past</AppText>
-        
-            <AppCard style={styles.card}
-                title="Bora Bora"
-                subtitle="Visited on 4th June 2019"
-                image={require("../../assets/bora-bora.jpg")}
-            />
-            <AppCard style={styles.card}
-                title="Switzerland"
-                subtitle="Visted on 8th March 2018"
-                image={require("../../assets/switz.jpg")}
-            />
-      </View> */}
+      <View style={styles.placesContainer}>
+        <AppText style={styles.apptext}>Places you've visited in the past </AppText>
+              {places.map((item)=>{
+                return(
+                <View><AppCard style={styles.card}
+                title={item.title}
+                subtitle={item.subtitle}
+                image={item.image}                
+                // onPress={() => console.log("something")}
+                // onSwipeLeft={()=>(
+                // <View style={styles.deleteView}>
+                // <AppIcon name="trash-can" iconColor={AppColours.black} backgroundColor={AppColours.white}/>
+                // </View>
+                // )}              
+                />
+                <Button testID="TID9" title="delete" onPress={()=>{deletePrev(item.title)}}></Button>
+                </View>
+                )
+                
+              })}
+      </View>
     </View>
   );
 }
@@ -91,6 +116,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     fontWeight: 'bold',
   },
+  deleteView:{
+    justifyContent:"center",
+    alignItems: "center",
+    height: 75,
+    backgroundColor: 'brown',
+  },  
 });
 
 export default AccountScreen;

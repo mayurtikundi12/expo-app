@@ -1,21 +1,21 @@
-import { View, Image, StyleSheet, TouchableHighlight } from 'react-native';
-import Swipeable from 'react-native-gesture-handler/Swipeable';
+import { View, Image, StyleSheet, TouchableHighlight, Button } from 'react-native';
+// import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 import React from 'react';
 
 import AppColours from '../config/AppColours';
 import AppText from './AppText';
 
-function AppCard({title, subtitle, image}) {
+function AppCard({title, subtitle, image, onPress}) {
     return (
-        // <Swipeable renderRightActions={onSwipeLeft}>
-        
-        <View style={styles.container}>
-            <Image source={image} style={styles.image}/>
-            <AppText style={styles.title}> {title} </AppText>
-            <AppText style={styles.subtitle}> {subtitle} </AppText>
-
-        </View>
+        // <Swipeable renderRightActions={onSwipeLeft}>    
+            <TouchableHighlight onPress={onPress} underlayColor={AppColours.white}>   
+                <View style={styles.container}>
+                    <Image source={image} style={styles.image}/>
+                    <AppText style={styles.title}> {title} </AppText>
+                    <AppText style={styles.subtitle}> {subtitle} </AppText>
+                </View>
+            </TouchableHighlight> 
         // </Swipeable>
     );
 }

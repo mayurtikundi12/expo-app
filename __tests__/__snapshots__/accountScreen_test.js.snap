@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`appScreenTest App Screen Test 1`] = `
+exports[`accountScreen test Account Screen Test 1`] = `
 <View
   style={
     Object {
