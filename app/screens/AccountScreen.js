@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import { View, StyleSheet, Image, Button } from "react-native";
+import { View, StyleSheet, Image, Button,ScrollView } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppCard from "../components/AppCard";
@@ -9,12 +9,13 @@ import AppText from "../components/AppText";
 import User from "../context/userContext";
 import AppPicker from "../components/AppPicker";
 import AppIcon from "../components/AppIcon";
+// import {Picker} from '@react-native-picker/picker';
 // import Swipeable from 'react-native-gesture-handler';
 
 function AccountScreen(props) {
   const {userInfo} = useContext(User);
 
-  const schema =[
+  const categorySchema =[
     {label: "Tourist spots", value: 1, icon:"flash", backgroundColor: 'red'},
     {label: "Resorts", value: 2, icon:"flash", backgroundColor: 'red'},
     {label: "Shop", value: 3, icon:"flash", backgroundColor: 'red'},
@@ -30,6 +31,7 @@ function AccountScreen(props) {
     image: require("../../assets/switz.jpg")},
   ];
   const [places, setPlaces] = useState(placesList);
+  const [categories, setCategories] = useState(categorySchema);
 
   function deletePrev(title){
     let newPlaces = places.filter((item)=>item.title==title ? false : item)
@@ -38,6 +40,7 @@ function AccountScreen(props) {
 
 
   return (
+    <ScrollView  pagingEnabled={true} >
     <View style={styles.container}>
       <View style={styles.wrap}>
         <View style={styles.welcomeContainer}>
@@ -61,30 +64,37 @@ function AccountScreen(props) {
         </View>
       </View>
       <View>
-        <AppPicker data={schema} icon="apps" placeholder="Categories"/>
+        <AppPicker data={categories} icon="apps" placeholder="Categories"/>
+        {/* <Picker
+            selectedValue={categories[0].label}
+            onValueChange={(item, itemIndex) =>
+              setSelectedLanguage(item.value)
+            }>
+              {
+                categories.map((item)=>{
+                  <Picker.Item label={item.label} value={item.value} />
+                })
+              }
+        </Picker> */}
       </View>
       <View style={styles.placesContainer}>
         <AppText style={styles.apptext}>Places you've visited in the past </AppText>
-              {places.map((item)=>{
+          {places.map((item,key)=>{
                 return(
-                <View><AppCard style={styles.card}
+                <View key={key}>
+                <AppCard style={styles.card}
                 title={item.title}
                 subtitle={item.subtitle}
-                image={item.image}                
-                // onPress={() => console.log("something")}
-                // onSwipeLeft={()=>(
-                // <View style={styles.deleteView}>
-                // <AppIcon name="trash-can" iconColor={AppColours.black} backgroundColor={AppColours.white}/>
-                // </View>
-                // )}              
+                image={item.image}     
                 />
-                <Button testID="TID9" title="delete" onPress={()=>{deletePrev(item.title)}}></Button>
+                <Button testID={"TID"+(8+key)} title="delete" onPress={()=>{deletePrev(item.title)}}></Button>
                 </View>
                 )
                 
               })}
       </View>
     </View>
+    </ScrollView>
   );
 }
 

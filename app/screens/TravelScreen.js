@@ -1,14 +1,14 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import AppCard from '../components/AppCard';
 import AppColours from '../config/AppColours';
-import AppSelect from '../components/AppSelect';
 import AppText from '../components/AppText';
 
 
 function TravelScreen(props) {
     return (
+        <ScrollView pagingEnabled={true} >
         <View style={styles.container}>
             <AppText style={styles.apptext}>
                 Select your travel destination!
@@ -29,6 +29,7 @@ function TravelScreen(props) {
                 image={require("../../assets/myk.jpg")}
             />
         </View>
+        </ScrollView>
     );
 }
 const styles = StyleSheet.create({

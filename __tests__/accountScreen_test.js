@@ -9,13 +9,18 @@ import {
 } from '@testing-library/react-native';
 import AppText from '../app/components/AppText';
 import AccountScreen from '../app/screens/AccountScreen.js';
+import User from '../app/context/userContext';
 
 describe('accountScreen test', () => {
     let tree, treeInstance;
+    let userInfo = {"email":"a@a.com","username":"a"}
     beforeAll(() => {
-        renderer.create( <App/> )
-        tree = renderer.create( <AccountScreen/> )
 
+        tree = renderer.create( 
+            <User.Provider value={{userInfo}} >
+            <AccountScreen/> 
+            </User.Provider>
+        )
         treeInstance = tree.root
     })
 
@@ -25,9 +30,12 @@ describe('accountScreen test', () => {
 
     it('Delete Test', async() => {
         let button = treeInstance.findByProps({testID: 'TID9'})
-        console.log(button)
-
         expect(button).toBeTruthy();
+        await act(async()=>{
+            await button.props.onPress();
+        })
+        let updatedButtons = treeInstance.findAllByProps({testID: 'TID9'})
+        expect(updatedButtons.length).toEqual(0);
     })
 
 })

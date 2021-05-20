@@ -11,7 +11,7 @@ const Tab = createBottomTabNavigator();
 function HomeScreen(props) {
 
     return (
-        // <NavigationContainer>
+
                 <Tab.Navigator
         //         screenOptions={({ route }) => ({
         //   tabBarIcon: ({ focused, color, size }) => {
@@ -47,7 +47,6 @@ function HomeScreen(props) {
 
                     
                 </Tab.Navigator>
-        // {/* </NavigationContainer> */}
     )};
 
 
