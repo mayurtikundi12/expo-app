@@ -683,6 +683,84 @@ exports[`accountScreen test Account Screen Test 1`] = `
           </View>
         </View>
       </View>
+      <View>
+        <TextInput
+          allowFontScaling={true}
+          autoCapitalize="none"
+          autoCorrect={false}
+          onChangeText={[Function]}
+          placeholder="Image URl"
+          rejectResponderTermination={true}
+          testID="imageText"
+          textContentType="imageText"
+          underlineColorAndroid="transparent"
+        />
+        <TextInput
+          allowFontScaling={true}
+          autoCapitalize="none"
+          autoCorrect={false}
+          keyboardType="Title"
+          onChangeText={[Function]}
+          placeholder="Title"
+          rejectResponderTermination={true}
+          testID="accountTitleText"
+          textContentType="accountTitleText"
+          underlineColorAndroid="transparent"
+        />
+        <TextInput
+          allowFontScaling={true}
+          autoCapitalize="none"
+          autoCorrect={false}
+          onChangeText={[Function]}
+          placeholder="Sub Title"
+          rejectResponderTermination={true}
+          testID="accountSubTitleText"
+          textContentType="accountSubTitleText"
+          underlineColorAndroid="transparent"
+        />
+      </View>
+      <View
+        accessibilityRole="button"
+        accessibilityState={Object {}}
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID="AddPlace"
+      >
+        <View
+          style={
+            Array [
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#007AFF",
+                  "fontSize": 18,
+                  "margin": 8,
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            Add Place
+          </Text>
+        </View>
+      </View>
     </View>
   </View>
 </RCTScrollView>

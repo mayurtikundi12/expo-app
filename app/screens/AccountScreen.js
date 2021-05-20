@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import { View, StyleSheet, Image, Button,ScrollView } from "react-native";
+import { View, StyleSheet, Image, Button,ScrollView,TextInput } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppCard from "../components/AppCard";
@@ -32,10 +32,24 @@ function AccountScreen(props) {
   ];
   const [places, setPlaces] = useState(placesList);
   const [categories, setCategories] = useState(categorySchema);
+ 
+  const [imageText, setImageText] = useState();
+  const [title, setTitleText] = useState();
+  const [subTitle, setSubTitleText] = useState();
+
 
   function deletePrev(title){
     let newPlaces = places.filter((item)=>item.title==title ? false : item)
     setPlaces(newPlaces)
+  }
+
+  function addPlace(image,title,subTitle){
+    let newPlace = {
+      title: title,
+    subtitle: subTitle,
+    image: image
+    }
+    setPlaces([...places,newPlace])
   }
 
 
@@ -93,6 +107,31 @@ function AccountScreen(props) {
                 
               })}
       </View>
+      <View style={styles.textInputContainer}>  
+                    <TextInput testID ='imageText'
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        placeholder="Image URl"
+                        textContentType="imageText"
+                        onChangeText = { imageText => setImageText(imageText)}
+                        />           
+                    <TextInput testID ='accountTitleText'
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        placeholder="Title"
+                        keyboardType="Title"
+                        textContentType="accountTitleText"
+                        onChangeText = { subTitle => setTitleText(title)}
+                        />
+                    <TextInput testID ='accountSubTitleText'
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        placeholder="Sub Title"
+                        textContentType="accountSubTitleText"
+                        onChangeText = {subTitle => setSubTitleText(subTitle)}
+                        />
+                </View> 
+                <Button testID= 'AddPlace' title="Add Place" onPress={() => {addPlace(imageText , title, subTitle)}}/>
     </View>
     </ScrollView>
   );
