@@ -3,7 +3,7 @@ import 'react-native';
 import renderer from 'react-test-renderer';
 import TravelScreen from '../app/screens/TravelScreen.js';
 import {act} from '@testing-library/react-native';
-describe('accountScreen test', () => {
+describe('Travel Screen test', () => {
     let tree, treeInstance;
     beforeAll(() => {
         tree = renderer.create( 
